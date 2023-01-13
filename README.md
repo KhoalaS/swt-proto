@@ -10,8 +10,6 @@ Zum Scaffolding wurde der vom Vue Team empfohlene Command
 
 benutzt mit vue-router für SPA Routing.
 
-Auch wurde das Vite-PWA Plugin eingebunden.
-
 Für die Karte wurde die Javascript Bibliothek leaflet.js benutzt.
 
 Entrypoint ist App.vue, die Views welche über Links erreichbar sind befinden sich im _views_ Ordner. Kleinere Kompenenten sind im _components_ Ordner.
@@ -42,7 +40,10 @@ Benutzt werden hauptsächlich Icons von FontAwesome im Solid Design.
   - [x] Zoom-In für QR Code
 - [x] Reiseplanung
 - [x] Registrieren
-- [ ] Tickets
-  - [ ] Buchen
+- [x] Tickets
+  - [x] Buchen
 - [x] Map Integration
   - [ ] Pin Integration
+- [x] Verlauf
+- [x] Favoriten
+- [x] Einstellungen

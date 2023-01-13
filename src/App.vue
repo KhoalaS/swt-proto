@@ -45,25 +45,50 @@ const currentRoute = () => {
         to="/"
         class="text-white flex flex-row w-full p-2"
       >
-        <div class="w-full whitespace-nowrap">Routenplanung</div>
+        <div class="w-full whitespace-nowrap">🗺️ Routenplanung</div>
       </RouterLink>
       <RouterLink
         @click="openNav"
         to="/login"
         class="text-white flex flex-row w-full p-2"
       >
-        <div class="w-full whitespace-nowrap">Login</div>
+        <div class="w-full whitespace-nowrap">👤 Login</div>
       </RouterLink>
       <RouterLink
         @click="openNav"
         to="/mytickets"
         class="text-white flex flex-row w-full p-2"
       >
-        <div class="w-full whitespace-nowrap">Meine Tickets</div>
+        <div class="w-full whitespace-nowrap">🎫 Meine Tickets</div>
       </RouterLink>
-      <a class="text-white flex flex-row w-full p-2" href="#">
-        <div class="w-full whitespace-nowrap">Einstellungen</div>
-      </a>
+      <RouterLink
+        @click="openNav"
+        to="/tickets"
+        class="text-white flex flex-row w-full p-2"
+      >
+        <div class="w-full whitespace-nowrap">🎫 Tickets</div>
+      </RouterLink>
+      <RouterLink
+        @click="openNav"
+        to="/history"
+        class="text-white flex flex-row w-full p-2"
+      >
+        <div class="w-full whitespace-nowrap">📜 Verlauf</div>
+      </RouterLink>
+      <RouterLink
+        @click="openNav"
+        to="/favourites"
+        class="text-white flex flex-row w-full p-2"
+      >
+        <div class="w-full whitespace-nowrap">⭐ Favoriten</div>
+      </RouterLink>
+      <RouterLink
+        @click="openNav"
+        to="/settings"
+        class="text-white flex flex-row w-full p-2"
+      >
+        <div class="w-full whitespace-nowrap">⚙️ Einstellungen</div>
+      </RouterLink>
     </div>
   </div>
   <div

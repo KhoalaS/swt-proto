@@ -22,8 +22,8 @@ function getPwLength(password) {
           <option>Keine Angabe</option>
         </select>
       </div>
-      <div class="flex justify-center gap-8 mb-2">
-        <div class="flex flex-col">
+      <div class="flex justify-start gap-8 mb-2">
+        <div class="flex flex-col w-1/2">
           <label>Vorname</label>
           <div class="flex items-center border-2 border-blue rounded p-1">
             <input
@@ -34,7 +34,7 @@ function getPwLength(password) {
           </div>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col w-1/2">
           <label>Nachname </label>
           <div class="flex items-center border-2 border-blue rounded p-1">
             <input

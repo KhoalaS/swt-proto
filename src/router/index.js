@@ -40,6 +40,32 @@ const router = createRouter({
       name: "Profil erstellen",
       component: () => import("../views/CreateProfileView.vue"),
     },
+    {
+      path: "/tickets",
+      name: "Tickets",
+      component: () => import("../views/TicketView.vue"),
+    },
+    {
+      path: "/booking?name=:name&price=:price",
+      name: "Ticket Buchen",
+      props: true,
+      component: () => import("../views/BookingView.vue"),
+    },
+    {
+      path: "/history",
+      name: "Verlauf",
+      component: () => import("../views/HistoryView.vue"),
+    },
+    {
+      path: "/favourites",
+      name: "Favoriten",
+      component: () => import("../views/FavouritesView.vue"),
+    },
+    {
+      path: "/settings",
+      name: "Einstellungen",
+      component: () => import("../views/SettingsView.vue"),
+    },
   ],
 });
 

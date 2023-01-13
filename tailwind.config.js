@@ -9,6 +9,7 @@ module.exports = {
     colors: {
       blue: "#0069be",
       "dark-blue": "#005498",
+      "light-blue": "#b3dbfe75",
       green: "#78be19",
       "dark-green": "#639d15",
       red: colors.red,
@@ -16,6 +17,9 @@ module.exports = {
       black: colors.black,
       gray: colors.gray,
       "black-trans": "#000000b0",
+    },
+    screens: {
+      phone: "400px",
     },
   },
   plugins: [],

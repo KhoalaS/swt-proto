@@ -18,6 +18,10 @@ import {
   faRightLeft,
   faXmark,
   faRightLong,
+  faCaretRight,
+  faCaretDown,
+  faSpinner,
+  faBusSimple,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faApple,
@@ -40,6 +44,10 @@ library.add([
   faTwitter,
   faApple,
   faRightLong,
+  faCaretRight,
+  faCaretDown,
+  faSpinner,
+  faBusSimple
 ]);
 
 const app = createApp(App);
