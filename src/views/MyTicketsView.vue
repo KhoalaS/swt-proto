@@ -48,14 +48,14 @@ function getValidDate() {
   </div>
   <main class="p-4">
     <TicketTile
-      dep="Porta Nigra"
-      dest="Kohlenstraße"
+      dep="Trier, Porta Nigra"
+      dest="Kürenz, Kohlenstraße"
       :date="getValidDate()"
       :is-valid="true"
     ></TicketTile>
     <TicketTile
-      dep="Universität"
-      dest="Treveris"
+      dep="Tarforst, Universität"
+      dest="Trier, Treveris"
       :date="getInvalidDate()"
       :is-valid="false"
     ></TicketTile>

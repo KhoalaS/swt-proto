@@ -30,7 +30,7 @@ const from1 = [
         level="2"
         line="3"
         :price="3.1"
-        dep="Trier, Universität"
+        dep="Tarforst, Universität"
         dest="Trier, Porta Nigra"
         time="Mo 12:05-12:22"
       ></FavouriteTile>

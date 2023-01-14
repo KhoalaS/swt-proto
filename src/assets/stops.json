@@ -1,38 +1,4 @@
 {
-  "parameters": [
-    {
-      "name": "serverID",
-      "value": "efa-3"
-    },
-    {
-      "name": "requestID",
-      "value": "0"
-    },
-    {
-      "name": "sessionID",
-      "value": "0"
-    },
-    {
-      "name": "calcTime",
-      "value": "45.801"
-    },
-    {
-      "name": "serverTime",
-      "value": "2023-01-09T20:31:14"
-    }
-  ],
-  "request": {
-    "coordsLU": {
-      "x": "6.59179",
-      "y": "49.78126",
-      "mapName": "WGS84[DD.DDDDD]"
-    },
-    "coordsRL": {
-      "x": "6.72363",
-      "y": "49.72448",
-      "mapName": "WGS84[DD.DDDDD]"
-    }
-  },
   "pins": [
     {
       "desc": "Petrisberg",

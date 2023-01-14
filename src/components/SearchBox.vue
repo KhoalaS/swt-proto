@@ -14,6 +14,10 @@ function swap() {
     dest.value = temp;
   }
 }
+
+function changed() {
+  console.log("value changed");
+}
 </script>
 
 <template>
@@ -25,10 +29,12 @@ function swap() {
           class="flex flex-row justify-between border-2 border-blue rounded p-1"
         >
           <input
+            id="departure"
             type="text"
             placeholder="Ort/Haltestelle/Straße"
             class="px-2 py-1 focus:outline-none w-full"
             v-model="dep"
+            @input="changed"
           />
           <button title="aktuelle Position">
             <font-awesome-icon icon="fa-solid fa-crosshairs" />
@@ -39,6 +45,7 @@ function swap() {
         <label>nach</label>
         <div class="border-2 border-blue rounded p-1">
           <input
+            id="destination"
             type="text"
             placeholder="Ort/Haltestelle/Straße"
             class="px-2 py-1 focus:outline-none w-full"
