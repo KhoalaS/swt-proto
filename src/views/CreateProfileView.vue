@@ -28,12 +28,12 @@ function getPwLength(password) {
     </div>
     <div class="flex justify-between">
       <button
-        class="w-1/3 py-2 border-2 border-black hover:bg-green-200 bg-white text-black text-2xl rounded"
+        class="w-fit p-2 border-2 border-black hover:bg-green-200 bg-white text-black text-2xl rounded"
       >
         Ändern
       </button>
       <button
-        class="w-1/3 py-2 font-bold hover:bg-dark-blue bg-blue text-white text-2xl rounded"
+        class="w-fit p-2 font-bold hover:bg-dark-blue bg-blue text-white text-2xl rounded"
       >
         Bestätigen
       </button>
