@@ -40,7 +40,6 @@ onMounted(() => {
     }
   });
   m.on("zoom", () => {
-    console.log(m.getZoom());
     if (m.getZoom() < 15) {
       document.querySelector(".leaflet-marker-pane").style = "display:none;";
       document.querySelector(".leaflet-shadow-pane").style = "display:none;";
@@ -52,17 +51,6 @@ onMounted(() => {
   });
 });
 
-function htmlToElement(html) {
-  var template = document.createElement("template");
-  html = html.trim(); // Never return a text node of whitespace as the result
-  template.innerHTML = html;
-  console.log(document.baseURI);
-  return template.content.firstChild;
-}
-
-function clicker() {
-  console.log("cock");
-}
 </script>
 
 <template>
