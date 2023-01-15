@@ -16,7 +16,7 @@ function getPwLength(password) {
     <div class="flex flex-col">
       <div class="flex flex-col w-full justify-center mb-2">
         <label>Anrede</label>
-        <select class="w-full text-xl px-2 py-1">
+        <select class="w-full text-xl px-2 py-1 border-2 border-blue rounded">
           <option>Herr</option>
           <option>Frau</option>
           <option>Keine Angabe</option>

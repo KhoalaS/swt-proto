@@ -32,12 +32,12 @@ function getPwLength() {
             @input="getPwLength"
           />
           <font-awesome-icon
-            :class="showEyeIcon ? 'px-1 hover:cursor-pointer' : 'px-1 hidden'"
+            :class="showEyeIcon ? 'px-1 hover:cursor-pointer dark:text-gray' : 'px-1 hidden dark:text-gray'"
             :icon="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
             @click="showPassword = !showPassword"
           />
         </div>
-        <a class="underline" href="/">Passwort vergessen</a>
+        <a class="underline text-blue hover:cursor-pointer">Passwort vergessen</a>
       </div>
 
       <button
@@ -66,7 +66,7 @@ function getPwLength() {
         <div class="flex justify-between">
           <div class="flex flex-col items-center">
             <div
-              class="hover:cursor-pointer hover:bg-gray-100 border-2 border-black w-16 h-16 rounded-xl flex items-center justify-center"
+              class="hover:cursor-pointer hover:bg-gray border-2 border-black dark:border-blue w-16 h-16 rounded-xl flex items-center justify-center"
             >
               <font-awesome-icon
                 icon="fa-brands fa-twitter"
@@ -79,7 +79,7 @@ function getPwLength() {
           </div>
           <div class="flex flex-col items-center">
             <div
-              class="hover:cursor-pointer hover:bg-gray-100 border-2 border-black w-16 h-16 rounded-xl flex items-center justify-center"
+              class="hover:cursor-pointer hover:bg-gray border-2 border-black dark:border-blue w-16 h-16 rounded-xl flex items-center justify-center"
             >
               <font-awesome-icon icon="fa-brands fa-google" size="xl" />
             </div>
@@ -87,7 +87,7 @@ function getPwLength() {
           </div>
           <div class="flex flex-col items-center">
             <div
-              class="hover:cursor-pointer hover:bg-gray-100 border-2 border-black w-16 h-16 rounded-xl flex items-center justify-center"
+              class="hover:cursor-pointer hover:bg-gray border-2 border-black dark:border-blue w-16 h-16 rounded-xl flex items-center justify-center"
             >
               <font-awesome-icon
                 icon="fa-brands fa-facebook"
@@ -100,13 +100,13 @@ function getPwLength() {
           </div>
           <div class="flex flex-col items-center">
             <div
-              class="hover:cursor-pointer hover:bg-gray-100 border-2 border-black w-16 h-16 bg-white rounded-xl flex items-center justify-center"
+              class="hover:cursor-pointer hover:bg-gray border-2 border-black dark:border-blue w-16 h-16 rounded-xl flex items-center justify-center"
             >
               <font-awesome-icon
                 icon="fa-brands fa-apple"
                 size="xl"
                 inverse
-                style="--fa-inverse: black"
+
               />
             </div>
             <p>Apple</p>

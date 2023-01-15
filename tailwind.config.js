@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const { faRightToBracket } = require("@fortawesome/free-solid-svg-icons");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}", "./src/App.vue"],
   theme: {
     extend: {},
@@ -15,7 +15,8 @@ module.exports = {
       red: colors.red,
       white: colors.white,
       black: colors.black,
-      gray: colors.gray,
+      "dm-black": "#181818",
+      gray: "#ececec",
       "black-trans": "#000000b0",
     },
     screens: {

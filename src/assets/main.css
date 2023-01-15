@@ -16,3 +16,22 @@
     display: flex;
   }
 }
+
+@layer components {
+  input,
+  select,
+  main {
+    @apply dark:bg-dm-black dark:text-gray;
+  }
+  label,
+  p {
+    @apply dark:text-gray;
+  }
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  font-awesome-icon {
+    --fa-inverse: black;
+  }
+}

@@ -43,7 +43,7 @@ function formatPrice(price) {
       </p>
       <div class="flex gap-2 items-center">
         <p>{{ props.dep }}</p>
-        <font-awesome-icon icon="fa-solid fa-arrow-right"></font-awesome-icon>
+        <font-awesome-icon icon="fa-solid fa-arrow-right" class="dark:text-gray"></font-awesome-icon>
         <p>{{ props.dest }}</p>
       </div>
 
@@ -51,7 +51,7 @@ function formatPrice(price) {
         <p>{{ props.time }}</p>
       </div>
 
-      <button class="hover:bg-light-blue ease-in duration-100 font-bold border border-blue px-2 py-1 rounded">
+      <button class="hover:bg-light-blue ease-in duration-100 font-bold border-2 border-blue px-2 py-1 mt-1 rounded dark:text-gray">
         erneut kaufen für {{ formatPrice(props.price) }}
       </button>
     </div>

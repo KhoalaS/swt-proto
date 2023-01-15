@@ -40,7 +40,10 @@ function formatPrice(price) {
       </p>
       <div class="flex gap-2 items-center">
         <p>{{ props.dep }}</p>
-        <font-awesome-icon icon="fa-solid fa-arrow-right"></font-awesome-icon>
+        <font-awesome-icon
+          icon="fa-solid fa-arrow-right"
+          class="dark:text-gray"
+        ></font-awesome-icon>
         <p>{{ props.dest }}</p>
       </div>
 

@@ -55,15 +55,24 @@ function advanceTime(dir) {
         class="flex items-center w-full justify-between border-2 border-blue rounded p-1"
       >
         <button @click="advanceDate(-1)">
-          <font-awesome-icon icon="fa-solid fa-arrow-left" />
+          <font-awesome-icon
+            icon="fa-solid fa-arrow-left"
+            class="dark:text-gray"
+          />
         </button>
         <input v-model="date_v" type="text" class="focus:outline-none w-1/2" />
         <button @click="advanceDate(+1)">
-          <font-awesome-icon icon="fa-solid fa-arrow-right" />
+          <font-awesome-icon
+            icon="fa-solid fa-arrow-right"
+            class="dark:text-gray"
+          />
         </button>
       </div>
       <div class="flex items-center">
-        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+        <font-awesome-icon
+          icon="fa-solid fa-calendar-days"
+          class="dark:text-gray"
+        />
       </div>
     </div>
     <div class="flex gap-4 justify-between">
@@ -71,11 +80,17 @@ function advanceTime(dir) {
         class="flex items-center justify-between w-full border-2 border-blue rounded p-1"
       >
         <button @click="advanceTime(-1)">
-          <font-awesome-icon icon="fa-solid fa-arrow-left" />
+          <font-awesome-icon
+            icon="fa-solid fa-arrow-left"
+            class="dark:text-gray"
+          />
         </button>
         <input v-model="time_v" type="text" class="focus:outline-none w-1/2" />
         <button @click="advanceTime(+1)">
-          <font-awesome-icon icon="fa-solid fa-arrow-right" />
+          <font-awesome-icon
+            icon="fa-solid fa-arrow-right"
+            class="dark:text-gray"
+          />
         </button>
       </div>
       <div class="flex gap-4">

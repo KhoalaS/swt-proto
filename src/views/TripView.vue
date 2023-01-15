@@ -77,7 +77,7 @@ function zoomTo(index) {
     <div class="flex flex-col text-lg">
       <p>
         Start:
-        <a @click="zoomTo(0)" class="text-blue hover:cursor-pointer">{{
+        <a @click="zoomTo(0)" class="text-blue hover:cursor-pointer underline">{{
           props.dep
         }}</a>
       </p>
@@ -109,7 +109,7 @@ function zoomTo(index) {
       </p>
       <p>
         Ziel:
-        <a @click="zoomTo(1)" class="text-blue hover:cursor-pointer">{{
+        <a @click="zoomTo(1)" class="text-blue hover:cursor-pointer underline">{{
           props.dest
         }}</a>
       </p>

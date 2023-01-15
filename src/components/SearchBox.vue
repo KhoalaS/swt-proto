@@ -37,7 +37,7 @@ function changed() {
             @input="changed"
           />
           <button title="aktuelle Position">
-            <font-awesome-icon icon="fa-solid fa-crosshairs" />
+            <font-awesome-icon icon="fa-solid fa-crosshairs"  class="dark:text-gray"/>
           </button>
         </div>
       </div>
@@ -56,7 +56,7 @@ function changed() {
     </div>
     <div class="flex items-center mt-6">
       <button title="vertauschen" @click="swap">
-        <font-awesome-icon icon="fa-solid fa-right-left" rotation="90" />
+        <font-awesome-icon icon="fa-solid fa-right-left" rotation="90"  class="dark:text-gray" />
       </button>
     </div>
   </div>

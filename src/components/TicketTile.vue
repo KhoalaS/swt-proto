@@ -68,7 +68,7 @@ function getSerDate() {
     </div>
     <div class="flex flex-col items-center gap-2">
       <p class="text-xl whitespace-nowrap">von {{ props.dep }}</p>
-      <font-awesome-icon icon="fa-solid fa-right-long" rotation="90" />
+      <font-awesome-icon icon="fa-solid fa-right-long" rotation="90" class="dark:text-gray" />
       <p class="block text-xl whitespace-nowrap">
         nach <a>{{ props.dest }}</a>
       </p>
@@ -84,7 +84,7 @@ function getSerDate() {
             dest: props.dest,
           },
         }"
-        class="text-xl underline"
+        class="text-xl underline text-blue"
         >Reiseplan</RouterLink
       >
     </div>

@@ -120,7 +120,10 @@ function getValidUntil() {
             <option v-for="(zone, i) in zones">{{ zone }}</option>
           </select>
         </div>
-        <font-awesome-icon icon="fa-solid fa-arrow-right"></font-awesome-icon>
+        <font-awesome-icon
+          icon="fa-solid fa-arrow-right"
+          class="dark:text-gray"
+        ></font-awesome-icon>
         <div class="flex gap-2">
           <p>nach</p>
           <select v-model="dest">
@@ -170,7 +173,10 @@ function getValidUntil() {
       <p class="text-xl font-bold">{{ props.name }}</p>
       <div class="flex items-center gap-8">
         <p>von Zone {{ dep }}</p>
-        <font-awesome-icon icon="fa-solid fa-arrow-right"></font-awesome-icon>
+        <font-awesome-icon
+          icon="fa-solid fa-arrow-right"
+          class="dark:text-gray"
+        ></font-awesome-icon>
         <p>nach Zone {{ dest }}</p>
       </div>
       <div class="flex gap-4 flex-col">
@@ -196,7 +202,7 @@ function getValidUntil() {
       <div class="flex justify-between">
         <button
           @click="primary = true"
-          class="w-1/3 border-2 border-black py-2 text-2xl rounded"
+          class="w-1/3 border-2 border-black py-2 text-2xl rounded dark:text-gray dark:border-gray"
         >
           Ändern
         </button>
