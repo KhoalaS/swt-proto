@@ -6,8 +6,6 @@ const open = ref(false);
 const enableDarkmode = ref(false);
 provide("darkMode", { darkMode, enableDarkmode });
 
-
-
 function openNav() {
   open.value = !open.value;
 }

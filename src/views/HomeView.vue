@@ -31,11 +31,11 @@ onMounted(() => {
       const marker = L.marker([coords[1], coords[0]], { icon: myIcon })
         .addTo(m)
         .bindPopup(
-          `<p>${elem.attrs[1].value}</p><div class="flex justify-between gap-4 my-2"><button onclick="` +
+          `<p>${elem.attrs[1].value}</p><div class="flex justify-between gap-4 my-2 dark:bg-dm-black"><button onclick="` +
             `document.querySelector('.leaflet-popup-close-button').click();let dep = document.querySelector('#departure');dep.value='${elem.attrs[1].value}';dep.dispatchEvent(new Event('input'));` +
-            '" class="rounded px-1 py-[2px] border-2 border-green">Von hier</button><button onclick="' +
+            '" class="rounded px-1 py-[2px] border-2 border-green dark:text-gray">Von hier</button><button onclick="' +
             `document.querySelector('.leaflet-popup-close-button').click();let dest = document.querySelector('#destination');dest.value='${elem.attrs[1].value}';dest.dispatchEvent(new Event('input'));` +
-            '" class="rounded px-1 py-[2px] border-2 border-blue">Hierhin</button></div>'
+            '" class="rounded px-1 py-[2px] border-2 border-blue dark:text-gray">Hierhin</button></div>'
         );
     }
   });

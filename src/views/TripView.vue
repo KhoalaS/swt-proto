@@ -53,7 +53,7 @@ onMounted(() => {
       .bindPopup(
         `<p>${
           elem.name
-        }</p><div class="flex justify-center gap-4 my-2"><button class="rounded px-1 py-[2px] border-2 border-green">${
+        }</p><div class="flex justify-center gap-4 my-2"><button class="dark:text-gray rounded px-1 py-[2px] border-2 border-green">${
           i == 0 ? "Start" : "Ziel"
         }</button></div>`
       );
@@ -77,9 +77,11 @@ function zoomTo(index) {
     <div class="flex flex-col text-lg">
       <p>
         Start:
-        <a @click="zoomTo(0)" class="text-blue hover:cursor-pointer underline">{{
-          props.dep
-        }}</a>
+        <a
+          @click="zoomTo(0)"
+          class="text-blue hover:cursor-pointer underline"
+          >{{ props.dep }}</a
+        >
       </p>
       <p>Linie 3</p>
       <p>Richtung Weidengraben</p>
@@ -109,9 +111,11 @@ function zoomTo(index) {
       </p>
       <p>
         Ziel:
-        <a @click="zoomTo(1)" class="text-blue hover:cursor-pointer underline">{{
-          props.dest
-        }}</a>
+        <a
+          @click="zoomTo(1)"
+          class="text-blue hover:cursor-pointer underline"
+          >{{ props.dest }}</a
+        >
       </p>
     </div>
   </main>

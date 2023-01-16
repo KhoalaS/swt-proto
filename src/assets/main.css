@@ -27,7 +27,20 @@
   p {
     @apply dark:text-gray;
   }
-  
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  @apply dark:bg-dm-black;
+}
+
+.leaflet-popup-close-button > span {
+  @apply dark:text-gray;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  @apply dark:text-gray dark:bg-dm-black dark:hover:text-dm-black;
 }
 
 @media (prefers-color-scheme: dark) {
