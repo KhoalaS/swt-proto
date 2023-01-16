@@ -91,13 +91,11 @@ function getPwLength(password) {
         </div>
       </div>
 
-      <RouterLink to="/createprofile">
-        <div
-          class="hover:bg-dark-blue bg-blue text-white py-2 text-2xl font-bold rounded my-4 text-center"
-        >
-          Registrieren
-        </div>
-      </RouterLink>
+      <button
+        class="hover:bg-dark-blue bg-blue text-white py-2 text-2xl font-bold rounded my-4 text-center"
+      >
+        <RouterLink to="/createprofile"> Registrieren </RouterLink>
+      </button>
 
       <p>
         Indem du auf „Registrieren“ klickst, stimmst du unseren

@@ -37,7 +37,10 @@ function changed() {
             @input="changed"
           />
           <button title="aktuelle Position">
-            <font-awesome-icon icon="fa-solid fa-crosshairs"  class="dark:text-gray"/>
+            <font-awesome-icon
+              icon="fa-solid fa-crosshairs"
+              class="dark:text-gray"
+            />
           </button>
         </div>
       </div>
@@ -56,11 +59,22 @@ function changed() {
     </div>
     <div class="flex items-center mt-6">
       <button title="vertauschen" @click="swap">
-        <font-awesome-icon icon="fa-solid fa-right-left" rotation="90"  class="dark:text-gray" />
+        <font-awesome-icon
+          icon="fa-solid fa-right-left"
+          rotation="90"
+          class="dark:text-gray"
+        />
       </button>
     </div>
   </div>
   <DatePicker></DatePicker>
+  <div class="flex justify-center">
+    <button
+      class="w-full hover:bg-dark-blue bg-blue text-white py-2 text-2xl font-bold rounded my-4"
+    >
+      Suchen
+    </button>
+  </div>
 </template>
 
 <style scoped></style>

@@ -32,12 +32,18 @@ function getPwLength() {
             @input="getPwLength"
           />
           <font-awesome-icon
-            :class="showEyeIcon ? 'px-1 hover:cursor-pointer dark:text-gray' : 'px-1 hidden dark:text-gray'"
+            :class="
+              showEyeIcon
+                ? 'px-1 hover:cursor-pointer dark:text-gray'
+                : 'px-1 hidden dark:text-gray'
+            "
             :icon="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
             @click="showPassword = !showPassword"
           />
         </div>
-        <a class="underline text-blue hover:cursor-pointer">Passwort vergessen</a>
+        <a class="underline text-blue hover:cursor-pointer"
+          >Passwort vergessen</a
+        >
       </div>
 
       <button
@@ -106,7 +112,7 @@ function getPwLength() {
                 icon="fa-brands fa-apple"
                 size="xl"
                 inverse
-
+                style="--fa-inverse: black"
               />
             </div>
             <p>Apple</p>
@@ -115,12 +121,12 @@ function getPwLength() {
       </div>
 
       <p class="text-lg mt-4 text-center">Noch kein Konto?</p>
-      <RouterLink
+
+      <button
         class="bg-green hover:bg-dark-green py-2 text-2xl rounded my-4 text-center"
-        to="/register"
       >
-        Jetzt Registrieren
-      </RouterLink>
+        <RouterLink to="/register"> Jetzt Refistrieren </RouterLink>
+      </button>
     </div>
   </main>
 </template>

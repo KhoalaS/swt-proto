@@ -49,7 +49,7 @@ function advanceTime(dir) {
 </script>
 
 <template>
-  <div class="flex flex-col my-6 gap-2">
+  <div class="flex flex-col mt-6 gap-2">
     <div class="flex gap-4 justify-between">
       <div
         class="flex items-center w-full justify-between border-2 border-blue rounded p-1"

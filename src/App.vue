@@ -95,7 +95,7 @@ function darkMode() {
           to="/favourites"
           class="text-white flex flex-row w-full p-2"
         >
-          <div class="w-full whitespace-nowrap">⭐ Favoriten</div>
+          <div class="w-full whitespace-nowrap">❤️ Favoriten</div>
         </RouterLink>
         <RouterLink
           @click="openNav"

@@ -27,6 +27,9 @@
   p {
     @apply dark:text-gray;
   }
+  button{
+    @apply shadow-md
+  }
 }
 
 .leaflet-popup-content-wrapper,
@@ -45,6 +48,6 @@
 
 @media (prefers-color-scheme: dark) {
   font-awesome-icon {
-    --fa-inverse: black;
+    --fa-inverse: white;
   }
 }

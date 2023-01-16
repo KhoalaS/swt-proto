@@ -10,7 +10,7 @@ Zum Scaffolding wurde der vom Vue Team empfohlene Command
 
 benutzt mit vue-router für SPA Routing.
 
-Für die Karte wurde die Javascript Bibliothek leaflet.js benutzt.
+Für die Karte wurde die Javascript Bibliothek [leaflet.js](https://leafletjs.com) benutzt.
 
 Entrypoint ist App.vue, die Views welche über Links erreichbar sind befinden sich im _views_ Ordner. Kleinere Kompenenten sind im _components_ Ordner.
 
@@ -18,7 +18,7 @@ Entrypoint ist App.vue, die Views welche über Links erreichbar sind befinden si
 
 ### Designsystem
 
-Das Styling wurde fast ausschließlich mit Tailwind CSS gemacht.
+Das Styling wurde fast ausschließlich mit [Tailwind CSS](https://tailwindcss.com/) gemacht.
 
 ### JS
 
@@ -27,10 +27,11 @@ Es wird die Composition API benutzt, außerdem wird die
         <script setup>
 
 Syntax verwendet.
+Variablen sind wenn möglich in camelCase notiert.
 
 ### Icons
 
-Benutzt werden hauptsächlich Icons von FontAwesome im Solid Design.
+Benutzt werden hauptsächlich Icons von [Font Awesome](https://fontawesome.com/) im Solid Design.
 
 ### Views
 
@@ -43,7 +44,7 @@ Benutzt werden hauptsächlich Icons von FontAwesome im Solid Design.
 - [x] Tickets
   - [x] Buchen
 - [x] Map Integration
-  - [ ] Pin Integration
+  - [x] Pin Integration
 - [x] Verlauf
 - [x] Favoriten
 - [x] Einstellungen
