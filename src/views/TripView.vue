@@ -91,9 +91,9 @@ function getPath() {
 </script>
 
 <template>
-  <main class="p-4 sm:flex sm:flex-row-reverse sm:gap-4">
+  <main class="p-4 md:flex md:flex-row-reverse md:gap-4">
     <div
-      class="z-0 h-[336px] sm:h-[720px] sm:w-full border-2 border-green rounded"
+      class="z-0 h-[336px] md:h-[720px] md:w-full border-2 border-green rounded"
       ref="map"
       id="map"
     ></div>

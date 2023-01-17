@@ -36,7 +36,7 @@ function getFullName(prefix) {
 </script>
 
 <template>
-  <main class="sm:w-1/4">
+  <main class="md:w-1/4">
     <div @click="click" class="flex items-center gap-2 hover:cursor-pointer">
       <div>
         <font-awesome-icon

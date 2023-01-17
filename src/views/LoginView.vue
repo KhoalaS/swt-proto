@@ -52,7 +52,7 @@ function getPwLength() {
         Anmelden
       </button>
 
-      <p class="block">
+      <p class="block whitespace-normal">
         Durch meine Anmeldung genehmige ich die
         <a class="text-blue hover:cursor-pointer hover:underline"
           >Datenschutzrichtlinien</a

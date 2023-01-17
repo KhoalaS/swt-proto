@@ -23,7 +23,7 @@ const from1 = [
 ];
 </script>
 <template>
-  <main class="p-4 sm:w-[450px]">
+  <main class="p-4 md:w-[450px]">
     <div class="flex flex-col gap-4">
       <TicketHistoryTile
         name="EinzelTicket"
