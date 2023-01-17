@@ -20,7 +20,9 @@ module.exports = {
       "black-trans": "#000000b0",
     },
     screens: {
-      phone: "400px",
+      sm: "450px",
+      md: "768px",
+      lg: "1024px",
     },
   },
   plugins: [],

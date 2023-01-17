@@ -34,8 +34,10 @@ const extra = [
 ];
 </script>
 <template>
-  <main class="p-4">
-    <div class="flex flex-col gap-2">
+  <main class="p-4 h-full sm:w-full min-w-fit">
+    <div
+      class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-start sm:gap-8"
+    >
       <TicketDropDown
         title="EinzelTicket"
         :versions="single"

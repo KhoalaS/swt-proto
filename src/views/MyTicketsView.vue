@@ -37,7 +37,7 @@ function getValidDate() {
     v-show="qrCodeClicked"
     class="hover:cursor-zoom-out flex justify-center z-10 fixed top-31 left-0 w-full h-full bg-black-trans"
   >
-    <div class="w-4/5 m-16">
+    <div class="w-4/5 md:w-1/3 m-16">
       <canvas
         class="w-full"
         height="256"
@@ -46,7 +46,7 @@ function getValidDate() {
       ></canvas>
     </div>
   </div>
-  <main class="p-4">
+  <main class="p-4 md:flex">
     <TicketTile
       dep="Trier, Porta Nigra"
       dest="Kürenz, Kohlenstraße"

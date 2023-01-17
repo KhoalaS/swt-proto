@@ -1,6 +1,6 @@
 # swt-prototyp
 
-Frontend-Prototyp für ein Ticketkaufsystem der SWT und damit letztendlich der VRT. Entwickelt wurde eine für mobile Geräte optimierte SPA mit PWA Support.
+Frontend-Prototyp für ein Ticketkaufsystem der SWT und damit letztendlich der VRT. Entwickelt wurde eine für responsive SPA mit PWA Support. Der Fokus wurde dabei jedoch auf mobile Endgeräte gelegt.
 
 # Aufbau
 
@@ -48,3 +48,7 @@ Benutzt werden hauptsächlich Icons von [Font Awesome](https://fontawesome.com/)
 - [x] Verlauf
 - [x] Favoriten
 - [x] Einstellungen
+
+### Nice to have
+- [x] Responsive
+- [x] Darkmode

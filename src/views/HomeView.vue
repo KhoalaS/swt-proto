@@ -53,19 +53,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="p-4">
+  <main class="p-4 flex flex-col lg:flex-row lg:gap-8">
     <SearchBox></SearchBox>
-    <div class="z-0" ref="map" id="map"></div>
+    <div
+      class="z-0 h-[336px] lg:h-[720px] lg:w-full border-2 border-green rounded"
+      ref="map"
+      id="map"
+    ></div>
   </main>
 </template>
 
-<style scoped>
-#map {
-  height: 420px;
-}
-@media (max-width: 1024px) {
-  #map {
-    height: 336px;
-  }
-}
-</style>
+<style scoped></style>

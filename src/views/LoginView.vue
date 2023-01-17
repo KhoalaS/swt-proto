@@ -11,7 +11,7 @@ function getPwLength() {
 </script>
 
 <template>
-  <main class="p-4">
+  <main class="p-4 sm:w-[450px] sm:flex sm:mx-auto">
     <div class="flex flex-col w-full">
       <label>E-Mail Adresse</label>
       <div class="border-2 border-blue rounded p-1">
@@ -125,7 +125,7 @@ function getPwLength() {
       <button
         class="bg-green hover:bg-dark-green py-2 text-2xl rounded my-4 text-center"
       >
-        <RouterLink to="/register"> Jetzt Refistrieren </RouterLink>
+        <RouterLink to="/register"> Jetzt Registrieren </RouterLink>
       </button>
     </div>
   </main>

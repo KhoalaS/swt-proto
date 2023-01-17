@@ -50,7 +50,7 @@ function darkMode() {
     <div
       :class="
         open
-          ? 'z-30 h-full w-1/2 fixed top-30 left-0 bg-dark-blue overflow-hidden duration-500 ease-out'
+          ? 'z-30 h-full w-1/2 sm:w-[225px] fixed top-30 left-0 bg-dark-blue overflow-hidden duration-500 ease-out'
           : 'z-30 h-full w-0 fixed top-30 left-0 bg-dark-blue overflow-hidden duration-500 ease-out'
       "
     >

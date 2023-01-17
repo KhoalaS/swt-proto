@@ -36,65 +36,71 @@ function getFullName(prefix) {
 </script>
 
 <template>
-  <div @click="click" class="flex items-center gap-2 hover:cursor-pointer">
-    <div>
-      <font-awesome-icon
-        icon="fa-solid fa-caret-right"
-        :rotation="open ? '90' : '0'"
-        class="ease-in duration-200 dark:text-gray"
-      />
-    </div>
+  <main class="sm:w-1/4">
+    <div @click="click" class="flex items-center gap-2 hover:cursor-pointer">
+      <div>
+        <font-awesome-icon
+          icon="fa-solid fa-caret-right"
+          :rotation="open ? '90' : '0'"
+          class="ease-in duration-200 dark:text-gray"
+        />
+      </div>
 
-    <p>{{ props.title }}s</p>
-  </div>
-  <div
-    :class="
-      open
-        ? 'max-h-[640px] w-full overflow-hidden duration-500 ease-in'
-        : 'max-h-0 w-full overflow-hidden duration-500 ease-out'
-    "
-  >
-    <div class="flex flex-col gap-1">
-      <div v-for="(type, i) in props.versions">
-        <RouterLink
-          :to="{
-            name: 'Ticket Buchen',
-            params: { name: getFullName(type.name), price: type.price },
-          }"
+      <p>{{ props.title }}s</p>
+    </div>
+    <div
+      :class="
+        open
+          ? 'max-h-[640px] w-full overflow-hidden duration-500 ease-in'
+          : 'max-h-0 w-full overflow-hidden duration-500 ease-out'
+      "
+    >
+      <div class="flex flex-col gap-1">
+        <div v-for="(type, i) in props.versions">
+          <RouterLink
+            :to="{
+              name: 'Ticket Buchen',
+              params: { name: getFullName(type.name), price: type.price },
+            }"
+          >
+            <div
+              class="p-2 border-2 border-green rounded-lg hover:bg-light-blue hover:cursor-pointer hover:border-dark-blue ease-in duration-75"
+            >
+              <p>
+                {{ props.title + " " + type.name }}
+              </p>
+              <p>
+                ab {{ formatPrice(type.price) }}
+                {{ type.disclaimer }}
+              </p>
+            </div>
+          </RouterLink>
+        </div>
+
+        <div
+          v-if="extra"
+          v-for="(type, i) in props.extra"
+          class="p-2 border-2 border-green rounded-lg hover:bg-light-blue hover:cursor-pointer hover:border-dark-blue ease-in duration-75"
         >
-          <div
-            class="p-2 border-2 border-green rounded-lg hover:bg-light-blue hover:cursor-pointer hover:border-dark-blue ease-in duration-75"
+          <RouterLink
+            :to="{
+              name: 'Ticket Buchen',
+              params: { name: type.name, price: type.price },
+            }"
           >
             <p>
-              {{ props.title + " " + type.name }}
+              {{ type.name }}
             </p>
-            <p>
-              ab {{ formatPrice(type.price) }}
-              {{ type.disclaimer }}
-            </p>
-          </div>
-        </RouterLink>
-      </div>
-
-      <div
-        v-if="extra"
-        v-for="(type, i) in props.extra"
-        class="p-2 border-2 border-green rounded-lg hover:bg-light-blue hover:cursor-pointer hover:border-dark-blue ease-in duration-75"
-      >
-        <RouterLink
-          :to="{
-            name: 'Ticket Buchen',
-            params: { name: type.name, price: type.price },
-          }"
-        >
-          <p>
-            {{ type.name }}
-          </p>
-          <p>ab {{ formatPrice(type.price) }}</p>
-        </RouterLink>
+            <p>ab {{ formatPrice(type.price) }}</p>
+          </RouterLink>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
-<style scopde></style>
+<style scopde>
+p {
+  white-space: nowrap;
+}
+</style>

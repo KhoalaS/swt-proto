@@ -91,9 +91,13 @@ function getPath() {
 </script>
 
 <template>
-  <main class="p-4">
-    <div class="z-0" ref="map" id="map"></div>
-    <div class="h-[2px] bg-dark-blue my-4 rounded"></div>
+  <main class="p-4 sm:flex sm:flex-row-reverse sm:gap-4">
+    <div
+      class="z-0 h-[336px] sm:h-[720px] sm:w-full border-2 border-green rounded"
+      ref="map"
+      id="map"
+    ></div>
+    <div class="md:hidden h-[2px] bg-dark-blue my-4 rounded"></div>
     <div class="flex flex-col text-lg">
       <p>
         Start:
@@ -142,12 +146,7 @@ function getPath() {
 </template>
 
 <style scoped>
-#map {
-  height: 420px;
-}
-@media (max-width: 1024px) {
-  #map {
-    height: 336px;
-  }
+p {
+  white-space: nowrap;
 }
 </style>

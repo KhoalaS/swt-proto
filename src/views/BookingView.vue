@@ -110,7 +110,7 @@ function getValidUntil() {
 </script>
 
 <template>
-  <main class="p-4">
+  <main class="p-4 sm:w-[450px] sm:mx-auto">
     <div v-if="primary" class="flex flex-col gap-4">
       <p class="text-xl font-bold">{{ props.name }}</p>
       <div class="flex gap-8">

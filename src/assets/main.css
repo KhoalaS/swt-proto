@@ -5,16 +5,8 @@
 @tailwind utilities;
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
   min-width: 336px;
   font-weight: normal;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-  }
 }
 
 @layer components {
@@ -27,8 +19,8 @@
   p {
     @apply dark:text-gray;
   }
-  button{
-    @apply shadow-md
+  button {
+    @apply shadow-md;
   }
 }
 

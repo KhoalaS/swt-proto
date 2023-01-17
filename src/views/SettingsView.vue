@@ -7,7 +7,7 @@ const routes = ["Routenplanung", "Meine Tickets", "Tickets", "Verlauf"];
 const langs = ["🇩🇪 Deutsch", "🇬🇧 Englisch"];
 </script>
 <template>
-  <main class="p-4">
+  <main class="p-4 md:w-[768px] md:mx-auto">
     <div class="flex flex-col">
       <div class="text-xl bg-green text-white px-2 py-1">
         <p>Ticket</p>
