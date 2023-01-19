@@ -13,7 +13,7 @@ function getPwLength(password) {
 
 <template>
   <main class="p-4">
-    <div class="flex flex-col">
+    <div class="sm:w-[450px] mx-auto flex flex-col">
       <div class="flex flex-col w-full justify-center mb-2">
         <label>Anrede</label>
         <select class="w-full text-xl px-2 py-1 border-2 border-blue rounded">
@@ -94,10 +94,12 @@ function getPwLength(password) {
       <button
         class="hover:bg-dark-blue bg-blue text-white py-2 text-2xl font-bold rounded my-4 text-center"
       >
-        <RouterLink to="/createprofile" class="font-bold"> Registrieren </RouterLink>
+        <RouterLink to="/createprofile" class="font-bold">
+          Registrieren
+        </RouterLink>
       </button>
 
-      <p>
+      <p class="whitespace-normal">
         Indem du auf „Registrieren“ klickst, stimmst du unseren
         <a class="underline text-blue cursor-pointer">Nutzungsbedingungen</a>
         zu. In unserer

@@ -4,6 +4,8 @@ import { ref, provide } from "vue";
 
 const open = ref(false);
 const enableDarkmode = ref(false);
+const isAdmin = ref(false);
+
 provide("darkMode", { darkMode, enableDarkmode });
 
 function openNav() {
@@ -11,6 +13,7 @@ function openNav() {
 }
 
 const currentRoute = () => {
+  isAdmin.value = useRoute().path.includes("admin");
   return useRoute().name;
 };
 
@@ -54,7 +57,7 @@ function darkMode() {
           : 'z-30 h-full w-0 fixed top-30 left-0 bg-dark-blue overflow-hidden duration-500 ease-out'
       "
     >
-      <div class="flex flex-col items-start">
+      <div v-if="!isAdmin" class="flex flex-col items-start">
         <RouterLink
           @click="openNav"
           to="/"
@@ -104,6 +107,9 @@ function darkMode() {
         >
           <div class="w-full whitespace-nowrap">⚙️ Einstellungen</div>
         </RouterLink>
+      </div>
+      <div v-else class="flex flex-col items-start">
+        
       </div>
     </div>
     <div
