@@ -74,6 +74,12 @@ const router = createRouter({
       name: "Adminview",
       component: () => import("../views/AdminView.vue"),
     },
+    {
+      path: "/editadmin?type=:type",
+      name: "Edit",
+      props:true,
+      component: () => import("../views/AdminEditView.vue"),
+    },
   ],
 });
 

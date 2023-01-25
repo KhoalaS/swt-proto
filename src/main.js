@@ -22,6 +22,7 @@ import {
   faCaretDown,
   faSpinner,
   faBusSimple,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faApple,
@@ -47,7 +48,8 @@ library.add([
   faCaretRight,
   faCaretDown,
   faSpinner,
-  faBusSimple
+  faBusSimple,
+  faPlus
 ]);
 
 const app = createApp(App);

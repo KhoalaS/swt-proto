@@ -5,7 +5,11 @@ module.exports = {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}", "./src/App.vue"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "ticket":"url('src/assets/Ticket.jpg')"
+      }
+    },
     colors: {
       blue: "#0069be",
       "dark-blue": "#005498",
