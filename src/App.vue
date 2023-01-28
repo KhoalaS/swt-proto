@@ -108,9 +108,7 @@ function darkMode() {
           <div class="w-full whitespace-nowrap">⚙️ Einstellungen</div>
         </RouterLink>
       </div>
-      <div v-else class="flex flex-col items-start">
-        
-      </div>
+      <div v-else class="flex flex-col items-start"></div>
     </div>
     <div
       @click="openNav"
