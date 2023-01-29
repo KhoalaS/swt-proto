@@ -100,6 +100,7 @@ const changes = ref(new Map());
 
 // ---- addVariant Modal only ----
 const addName = ref("");
+const nameEmpty = ref(false);
 const dupeName = ref(false);
 
 let levels = reactive(new Array(0));
@@ -152,13 +153,19 @@ function addVariant() {
 
 //probably have to change this to a normal @input
 watch(price, (newVal) => {
-  const pattern = RegExp("[0-9]*");
+  const pattern = RegExp("^[0-9]*$");
   if (!pattern.test(newVal.cent)) {
-    price.cent = price.cent.slice(-1);
+    let val = newVal.cent.toString();
+    const remPattern = new RegExp("[^0-9]", "g");
+    val = val.replace(remPattern, "");
+    price.cent = val;
     return;
   }
   if (!pattern.test(newVal.euro)) {
-    price.euro = price.euro.slice(-1);
+    let val = newVal.euro.toString();
+    const remPattern = new RegExp("[^0-9]", "g");
+    val = val.replace(remPattern, "");
+    price.euro = val;
     return;
   }
   changePrice(newVal);
@@ -227,13 +234,12 @@ function checkInput(e, index, type) {
   const pattern = RegExp("^[0-9]$");
   if (!pattern.test(e.data)) {
     if (type == "euro") {
-      console.log(levels[index]);
       levels[index].euro = levels[index].euro.toString().replace(e.data, "");
-      console.log(levels);
     } else {
       levels[index].cent = levels[index].cent.toString().replace(e.data, "");
     }
   }
+  console.log(levels[index]);
 }
 
 function isDupeName() {
@@ -250,16 +256,60 @@ function isDupeName() {
   }
 }
 function submitVariant() {
-  if (dupeName.value) return;
-  
+  if (dupeName.value || addName.value.length == 0) {
+    if (addName.value.length == 0) {
+      nameEmpty.value = true;
+    }
+    return;
+  }
+  const prices = [];
+
+  levels.forEach((elem) => {
+    const price = elem.euro + "." + elem.cent;
+    prices.push(Number(price));
+  });
+
+  const entry = {
+    name: addName.value,
+    price: prices[0],
+    disclaimer: "",
+    prices: prices,
+  };
+  selection.value.push(entry);
+
+  resetModal();
+  addOpen.value = false;
 }
 function closeEdit() {
-  levels = [{ euro: "0", cent: "00" }];
+  resetModal();
+
+  addOpen.value = false;
+}
+
+function resetModal() {
+  while (levels.length > 0) {
+    levels.pop();
+  }
+  levels.push({ euro: "0", cent: "00" });
   levelAmount.value = 1;
   dupeName.value = false;
   addName.value = "";
+  nameEmpty.value = false;
+}
 
-  addOpen.value = false;
+function modalFocusOut(index, type) {
+  if (type == "cent") {
+    if (levels[index].cent.length > 1) return;
+    if (levels[index].cent.length == 1) {
+      levels[index].cent = levels[index].cent + "0";
+    } else {
+      levels[index].cent = "00";
+    }
+  } else {
+    if (levels[index].euro.length > 0) return;
+
+    levels[index].euro = "0";
+  }
 }
 </script>
 
@@ -274,7 +324,7 @@ function closeEdit() {
     <div
       v-if="addOpen"
       id="modal"
-      class="p-2 fixed z-40 top-1/4 left-1/2 h-3/5 w-[300px] ml-[-150px] bg-white border-4 border-blue rounded"
+      class="flex flex-col justify-between p-2 fixed z-40 top-1/4 left-1/2 h-3/5 w-[300px] ml-[-150px] bg-white border-4 border-blue rounded"
     >
       <div class="flex justify-between">
         <p class="text-lg font-bold">Variante Hinzufügen</p>
@@ -285,78 +335,82 @@ function closeEdit() {
           icon="fa-solid fa-xmark"
         ></font-awesome-icon>
       </div>
-      <div class="h-full flex flex-col justify-between">
-        <div class="flex flex-col">
-          <label>Name</label>
-          <div class="border-2 border-blue rounded">
-            <input
-              @input="isDupeName"
-              v-model="addName"
-              class="px-2 py-1 w-full focus:outline-none"
-            />
-          </div>
-          <div v-if="dupeName" class="flex my-1 text-blue gap-1">
-            ⚠️
-            <p class="underline">Variante existiert bereits</p>
-          </div>
-          <div v-else class="opacity-0 my-1">placeholder</div>
-
-          <label class="">Anzahl Preisstufen: {{ levelAmount }}</label>
+      <div class="flex flex-col">
+        <label>Name</label>
+        <div class="border-2 border-blue rounded">
           <input
-            v-model="levelAmount"
-            class="mb-2"
-            type="range"
-            min="1"
-            max="10"
+            @input="isDupeName"
+            v-model="addName"
+            class="px-2 py-1 w-full focus:outline-none"
           />
-          <label class="text mt-4">Preise</label>
+        </div>
+        <div v-if="dupeName" class="flex my-1 text-blue gap-1">
+          ⚠️
+          <p class="underline">Variante existiert bereits</p>
+        </div>
+        <div v-else-if="nameEmpty" class="flex my-1 text-blue gap-1">
+          ⚠️
+          <p class="underline">Pflichtfeld</p>
+        </div>
+        <div v-else class="opacity-0 my-1">placeholder</div>
 
-          <div class="overflow-scroll h-[320px]">
-            <div
-              v-for="(item, i) in levels.slice(0, levelAmount)"
-              class="flex w-full items-end justify-between border-b-2 mb-4 pb-1 last:border-none"
-            >
-              <div class="flex">
-                <p>Stufe</p>
-                <div class="flex w-6 justify-end">{{ i + 1 }}:</div>
-              </div>
-              <div class="flex mr-2 items-center">
-                <input
-                  v-model="levels[i].euro"
-                  @input="(e) => checkInput(e, i, 'euro')"
-                  type="text"
-                  maxlength="2"
-                  class="text-center w-8 border-2 border-black rounded focus:outline-none"
-                />
-                ,
-                <input
-                  v-model="item.cent"
-                  @input="(e) => checkInput(e, i, 'cent')"
-                  type="text"
-                  maxlength="2"
-                  class="text-center w-8 border-2 border-black rounded focus:outline-none"
-                />
-                €
-              </div>
+        <label class="">Anzahl Preisstufen: {{ levelAmount }}</label>
+        <input
+          v-model="levelAmount"
+          class="mb-2"
+          type="range"
+          min="1"
+          max="10"
+        />
+        <label class="text mt-4">Preise</label>
+
+        <div class="overflow-scroll h-[270px]">
+          <div
+            v-for="(item, i) in levels.slice(0, levelAmount)"
+            class="flex w-full items-end justify-between border-b-2 mb-4 pb-1 last:border-none"
+          >
+            <div class="flex">
+              <p>Stufe</p>
+              <div class="flex w-6 justify-end">{{ i + 1 }}:</div>
+            </div>
+            <div class="flex mr-2 items-center">
+              <input
+                v-model="levels[i].euro"
+                @input="(e) => checkInput(e, i, 'euro')"
+                @focusout="modalFocusOut(i, 'euro')"
+                type="text"
+                maxlength="2"
+                class="text-center w-8 border-2 border-black rounded focus:outline-none"
+              />
+              ,
+              <input
+                v-model="item.cent"
+                @input="(e) => checkInput(e, i, 'cent')"
+                @focusout="modalFocusOut(i, 'cent')"
+                type="text"
+                maxlength="2"
+                class="text-center w-8 border-2 border-black rounded focus:outline-none"
+              />
+              €
             </div>
           </div>
         </div>
-        <div class="flex justify-between mb-8 mx-1">
-          <button
-            @click="submitVariant"
-            title="Bestätigen"
-            class="h-8 bg-blue text-white py-1 px-2 rounded hover:bg-dark-blue"
-          >
-            Bestätigen
-          </button>
-          <button
-            @click="closeEdit"
-            title="Abbrechen"
-            class="h-8 py-1 px-2 border-2 border-black rounded hover:bg-light-blue"
-          >
-            Abbrechen
-          </button>
-        </div>
+      </div>
+      <div class="flex justify-between justify-self-end">
+        <button
+          @click="submitVariant"
+          title="Bestätigen"
+          class="h-8 bg-blue text-white py-1 px-2 rounded hover:bg-dark-blue"
+        >
+          Bestätigen
+        </button>
+        <button
+          @click="closeEdit"
+          title="Abbrechen"
+          class="h-8 py-1 px-2 border-2 border-black rounded hover:bg-light-blue"
+        >
+          Abbrechen
+        </button>
       </div>
     </div>
   </Teleport>

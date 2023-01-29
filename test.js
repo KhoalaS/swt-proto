@@ -6,5 +6,7 @@ console.log(rep);
 const sTrans = rep.join(",");
 console.log("prices:[" + sTrans + "]");
 
-let t = "askdjas"
-console.log(t.slice(0,-1))
+let t = "2s";
+const reg = new RegExp("[^0-9]", "g")
+t = t.replaceAll(reg, "");
+console.log(t);
