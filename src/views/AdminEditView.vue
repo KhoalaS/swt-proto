@@ -324,7 +324,7 @@ function modalFocusOut(index, type) {
     <div
       v-if="addOpen"
       id="modal"
-      class="flex flex-col justify-between p-2 fixed z-40 top-1/4 left-1/2 h-3/5 w-[300px] ml-[-150px] bg-white border-4 border-blue rounded"
+      class="flex flex-col justify-between p-2 fixed z-40 top-1/4 left-1/2 h-3/5 w-[300px] ml-[-150px] bg-white border-4 border-green rounded-lg"
     >
       <div class="flex justify-between">
         <p class="text-lg font-bold">Variante Hinzufügen</p>

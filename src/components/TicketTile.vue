@@ -49,7 +49,7 @@ function getSerDate() {
 </script>
 
 <template>
-  <div class="border-4 border-green py-4 mx-4 mb-4">
+  <div class="border-4 border-green py-4 mx-4 mb-4 rounded-lg">
     <div class="flex flex-col items-center">
       <p class="text-3xl">Einzelticket</p>
       <div>
