@@ -1,8 +1,13 @@
 <script setup>
 // selection/dislpay all tickets in flex row
-import { ref, watch, reactive } from "vue";
+import { ref, watch, reactive, provide } from "vue";
 import Ticket from "../assets/Ticket.jpg";
 import ChangeTile from "../components/ChangeTile.vue";
+import SaveModal from "../components/SaveModal.vue";
+
+provide("closeSave", { closeSave });
+
+const ticketForceImport = Ticket + "0";
 
 const props = defineProps({
   type: {
@@ -81,6 +86,7 @@ const selection = ref(hashMap[props.type]);
 if (props.type == "single") {
   selection.value = single.concat(extra);
 }
+const clickSave = ref(false);
 
 const activeIndex = ref(0);
 
@@ -311,9 +317,13 @@ function modalFocusOut(index, type) {
     levels[index].euro = "0";
   }
 }
+function closeSave() {
+  clickSave.value = false;
+}
 </script>
 
 <template>
+  <SaveModal v-if="clickSave"></SaveModal>
   <Teleport to="body">
     <div
       v-if="addOpen"
@@ -430,7 +440,7 @@ function modalFocusOut(index, type) {
       </div>
       <div
         @click="addVariant"
-        class="flex bg-green hover:bg-dark-green rounded px-4 py-1 items-center hover:cursor-pointer"
+        class="flex gap-2 bg-green hover:bg-dark-green rounded px-4 py-1 items-center hover:cursor-pointer"
         title="Hinzufügen"
       >
         <font-awesome-icon
@@ -439,10 +449,19 @@ function modalFocusOut(index, type) {
           inverse
           size="xl"
         />
+        <p class="text-white text-lg">Hinzufügen</p>
       </div>
     </div>
     <div class="flex flex-col">
-      <p class="text-4xl mb-4 mt-12">Änderungen</p>
+      <div class="flex mb-4 mt-12 items-center gap-2">
+        <p class="text-4xl">Änderungen</p>
+        <button
+          @click="clickSave = true"
+          class="text-xl border-2 border-blue rounded px-2 py-1 hover:bg-light-blue"
+        >
+          💾 Speichern
+        </button>
+      </div>
       <div class="flex">
         <ChangeTile
           v-for="(k, i) in changes.keys()"
