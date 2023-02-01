@@ -470,7 +470,7 @@ function jumpToChange(active, level) {
         v-for="(item, i) in selection"
         :class="
           activeIndex == i
-            ? 'flex border-2 hover:bg-light-blue border-blue rounded py-1 px-2 hover:cursor-pointer text-white bg-blue items-center'
+            ? 'flex border-2 border-blue rounded py-1 px-2 hover:cursor-pointer text-white bg-blue items-center'
             : 'flex border-2 hover:bg-light-blue border-blue rounded py-1 px-2 hover:cursor-pointer items-center'
         "
       >

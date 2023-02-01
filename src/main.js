@@ -23,6 +23,7 @@ import {
   faSpinner,
   faBusSimple,
   faPlus,
+  faRotateLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faApple,
@@ -49,7 +50,8 @@ library.add([
   faCaretDown,
   faSpinner,
   faBusSimple,
-  faPlus
+  faPlus,
+  faRotateLeft
 ]);
 
 const app = createApp(App);

@@ -33,10 +33,10 @@ function getFormatPrice() {
 <template>
   <div v-if="isDifferent() == true" class="w-fit border-2 border-blue rounded">
     <div class="flex flex-col m-2">
-      <div class="flex justify-between">
+      <div class="flex justify-between gap-2">
         <p class="font-bold">Variante: {{ props.change.name }}</p>
-        <div class="border-2 border-black" @click="revertChange(props.change)">
-          x
+        <div class="hover:cursor-pointer border-2 border-red-500 rounded items-center px-1" @click="revertChange(props.change)">
+          <font-awesome-icon icon="fa-solid fa-rotate-left" />
         </div>
       </div>
       <p>Preisstufe: {{ props.change.level + 1 }}</p>
