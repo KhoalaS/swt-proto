@@ -60,7 +60,7 @@ function getSerDate() {
         ></canvas>
         <div
           v-if="!props.isValid"
-          class="z-1 flex items-center justify-center absolute w-[256px] h-[256px] top-0 bg-black-trans"
+          class="rounded z-1 flex items-center justify-center absolute w-[256px] h-[256px] top-0 bg-black-trans"
         >
           <p class="text-3xl font-bold text-white">ungültig</p>
         </div>

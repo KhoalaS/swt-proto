@@ -39,7 +39,7 @@ function getValidDate() {
   >
     <div class="w-4/5 md:w-1/3 m-16">
       <canvas
-        class="w-full"
+        class="w-full rounded-lg"
         height="256"
         width="256"
         ref="qrCodeHover"
