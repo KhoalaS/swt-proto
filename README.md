@@ -16,11 +16,11 @@ Entrypoint ist App.vue, die Views welche über Links erreichbar sind befinden si
 
 # Konventionen
 
-### Designsystem
+## Designsystem
 
 Das Styling wurde fast ausschließlich mit [Tailwind CSS](https://tailwindcss.com/) gemacht.
 
-### JS
+## JS
 
 Es wird die Composition API benutzt, außerdem wird die
 
@@ -29,26 +29,35 @@ Es wird die Composition API benutzt, außerdem wird die
 Syntax verwendet.
 Variablen sind wenn möglich in camelCase notiert.
 
-### Icons
+## Icons
 
 Benutzt werden hauptsächlich Icons von [Font Awesome](https://fontawesome.com/) im Solid Design.
 
-### Views
+# Views
+
+__Customer:__
 
 - [x] Login
 - [x] Routenplanung
 - [x] Meine Tickets
-  - [x] Zoom-In für QR Code
 - [x] Reiseplanung
 - [x] Registrieren
 - [x] Tickets
-  - [x] Buchen
 - [x] Map Integration
   - [x] Pin Integration
 - [x] Verlauf
 - [x] Favoriten
 - [x] Einstellungen
 
+__Admin:__
+- [x] Ticket Variante hinzufügen
+- [x] Preise für Variante ändern pro Preisstufe
+- [x] Änderungen rückgangig machen
+- [ ] Variante löschen
+- [ ] Preisstufe für Variante löschen 
+- [x] "Jump to change" bei Klick auf ChangeTile
+
 ### Nice to have
+
 - [x] Responsive
 - [x] Darkmode

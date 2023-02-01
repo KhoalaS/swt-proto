@@ -6,6 +6,7 @@ import ChangeTile from "../components/ChangeTile.vue";
 import SaveModal from "../components/SaveModal.vue";
 
 provide("closeSave", { closeSave });
+provide("changeTileFunc", { revertChange, jumpToChange });
 
 const ticketForceImport = Ticket + "0";
 
@@ -108,6 +109,7 @@ const changes = ref(new Map());
 const addName = ref("");
 const nameEmpty = ref(false);
 const dupeName = ref(false);
+const added = ref(0);
 
 let levels = reactive(new Array(0));
 levels.push({ euro: "0", cent: "00" });
@@ -208,7 +210,7 @@ function changePrice(newVal) {
       },
       type: hashName[props.type],
       name: selection.value[activeIndex.value].name,
-      level: index + 1,
+      level: index,
       active: activeIndex.value,
     };
     changes.value.set(`${activeIndex.value}|${index}`, change);
@@ -282,7 +284,7 @@ function submitVariant() {
     prices: prices,
   };
   selection.value.push(entry);
-
+  added.value += 1;
   resetModal();
   addOpen.value = false;
 }
@@ -319,6 +321,26 @@ function modalFocusOut(index, type) {
 }
 function closeSave() {
   clickSave.value = false;
+}
+
+function changesMade() {
+  return added > 0 && changes.value.size > 0;
+}
+
+function revertChange(change) {
+  changes.value.delete(`${change.active}|${change.level}`);
+  const ogVal = Number(change.og.euro + "." + change.og.cent);
+  selection.value[change.active].prices[change.level] = ogVal;
+  if (zoneNo.value == Number(change.level) + 1) {
+    price.euro = change.og.euro;
+    price.cent = change.og.cent;
+  }
+}
+
+function jumpToChange(active, level) {
+  console.log(active + "|" + level);
+  activeIndex.value = active;
+  zoneNo.value = Number(level) + 1;
 }
 </script>
 
@@ -425,22 +447,11 @@ function closeSave() {
     </div>
   </Teleport>
   <main class="p-4 h-full">
-    <p class="text-4xl mb-4">Variante</p>
-    <div class="flex gap-2 flex-wrap">
-      <div
-        @click="clickTile(i)"
-        v-for="(item, i) in selection"
-        :class="
-          activeIndex == i
-            ? 'border-2 border-blue rounded py-1 px-2 hover:cursor-pointer text-white bg-blue'
-            : 'border-2 border-blue rounded py-1 px-2 hover:cursor-pointer'
-        "
-      >
-        {{ hashName[props.type] + " " + item.name }}
-      </div>
-      <div
+    <div class="flex items-center gap-2 mb-4">
+      <p class="text-4xl">Variante</p>
+      <button
         @click="addVariant"
-        class="flex gap-2 bg-green hover:bg-dark-green rounded px-4 py-1 items-center hover:cursor-pointer"
+        class="flex h-fit gap-2 bg-green hover:bg-dark-green rounded px-2 py-1 items-center hover:cursor-pointer"
         title="Hinzufügen"
       >
         <font-awesome-icon
@@ -450,6 +461,20 @@ function closeSave() {
           size="xl"
         />
         <p class="text-white text-lg">Hinzufügen</p>
+      </button>
+    </div>
+
+    <div class="flex gap-2 flex-wrap">
+      <div
+        @click="clickTile(i)"
+        v-for="(item, i) in selection"
+        :class="
+          activeIndex == i
+            ? 'flex border-2 hover:bg-light-blue border-blue rounded py-1 px-2 hover:cursor-pointer text-white bg-blue items-center'
+            : 'flex border-2 hover:bg-light-blue border-blue rounded py-1 px-2 hover:cursor-pointer items-center'
+        "
+      >
+        {{ hashName[props.type] + " " + item.name }}
       </div>
     </div>
     <div class="flex flex-col">

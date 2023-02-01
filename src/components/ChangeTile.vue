@@ -1,4 +1,6 @@
 <script setup>
+import { inject } from "vue";
+
 const props = defineProps({
   change: {
     type: Object,
@@ -6,6 +8,7 @@ const props = defineProps({
   },
 });
 
+const { revertChange, jumpToChange } = inject("changeTileFunc");
 
 console.log(props.change.val);
 function isDifferent() {
@@ -30,14 +33,26 @@ function getFormatPrice() {
 <template>
   <div v-if="isDifferent() == true" class="w-fit border-2 border-blue rounded">
     <div class="flex flex-col m-2">
-      <p class="font-bold">Variante: {{ props.change.name }}</p>
-      <p>Preisstufe: {{ props.change.level }}</p>
+      <div class="flex justify-between">
+        <p class="font-bold">Variante: {{ props.change.name }}</p>
+        <div class="border-2 border-black" @click="revertChange(props.change)">
+          x
+        </div>
+      </div>
+      <p>Preisstufe: {{ props.change.level + 1 }}</p>
       <div class="flex items-center gap-2">
         <p>Preis:</p>
         <p>{{ props.change.og.euro + "," + props.change.og.cent + "€" }}</p>
         <font-awesome-icon icon="fa-solid fa-arrow-right"></font-awesome-icon>
         <p>{{ getFormatPrice() }}</p>
       </div>
+      <p
+        @click="jumpToChange(props.change.active, props.change.level)"
+        title="Anzeigen"
+        class="text-center underline hover:cursor-pointer text-blue"
+      >
+        Anzeigen
+      </p>
     </div>
   </div>
 </template>
